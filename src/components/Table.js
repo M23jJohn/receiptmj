@@ -17,9 +17,9 @@ export default function Table({ items }) {
           <tr key={index}>
             <td className="border p-2">{item.description}</td>
             <td className="border p-2 text-right">{item.quantity}</td>
-            <td className="border p-2 text-right">${item.price.toFixed(2)}</td>
+            <td className="border p-2 text-right">₱{item.price.toFixed(2)}</td>
             <td className="border p-2 text-right">{item.discount}%</td>
-            <td className="border p-2 text-right">${item.total.toFixed(2)}</td>
+            <td className="border p-2 text-right">₱{item.total.toFixed(2)}</td>
           </tr>
         ))}
       </tbody>
@@ -27,7 +27,7 @@ export default function Table({ items }) {
         <tr className="font-bold">
           <td colSpan="4" className="border p-2 text-right">Total:</td>
           <td className="border p-2 text-right">
-            ${items.reduce((sum, item) => sum + item.total, 0).toFixed(2)}
+            ₱{items.reduce((sum, item) => sum + item.total, 0).toFixed(2)}
           </td>
         </tr>
       </tfoot>
