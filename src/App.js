@@ -36,7 +36,7 @@ export default function App() {
       const quantity = parseInt(newItem.quantity);
       const total = (quantity * newItem.price) * (1 - newItem.discount / 100);
       setItems([...items, { ...newItem, quantity, total }]);
-      setNewItem({ description: '', quantity: '', price: '', discount: '' });
+      setNewItem({ description: '', quantity: '', price: 0, discount: 0 });
     }
   };
 
