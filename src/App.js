@@ -64,10 +64,6 @@ export default function App() {
             <p className="text-gray-600">this is the table</p>
           </div>
 
-          {/* Notes */}
-          <section className="mb-8">
-            <p className="text-gray-600">Notes to the Client...</p>
-          </section>
         </div>
       </main>
     </div>
