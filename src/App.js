@@ -48,7 +48,7 @@ export default function App() {
       <main className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         {showInvoice ? (
           <div className="p-8">
-            <Header />
+            <Header comname={comname} />
             <Details name={name} address={address} />
             <Client cname={cname} caddress={caddress} />
             <Date indate={indate} innum={innum} />
