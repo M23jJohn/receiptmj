@@ -8,13 +8,13 @@ export default function Dates({ indate, innum }) {
               <li>
                 <span className="font-bold text-gray-700">
                 Invoice Number:
-                </span>
+                </span><br />
                 {innum}
               </li>
               <li>
                 <span className="font-bold text-gray-700">
                 Invoiced Date:
-                </span>
+                </span><br />
                 {indate}
               </li>
             </ul>
