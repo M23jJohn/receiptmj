@@ -15,6 +15,7 @@ export default function Dates() {
                 </span>
               </li>
             </ul>
-          </article></div>
+          </article>
+          </div>
   )
 }
