@@ -5,10 +5,10 @@ function App() {
 
   return (
     <>
-      <main className="p-5 lg:max-w-xl lg:mx-auto">
+      <main className="m-5 p-5 lg:max-w-xl lg:mx-auto bg-white rounded shadow">
         {/* Header */}
         <header className="flex flex-col items-center justify-center mb-5">
-          <h2 className="text-2xl font-bold mb-2">Invoice Maker</h2>
+          <h1 className="uppercase tracking-wide text-4xl font-bold mb-3">Invoice Maker</h1>
           <ul className="flex items-center space-x-4">
             <li>
               <button onClick={handlePrint} className="btn-print">
@@ -27,31 +27,40 @@ function App() {
 
         {/* Details */}
         <section className="mb-5 text-right">
-          <h2 className="text-xl font-semibold">Your Name</h2>
+          <h2 className="text-xl font-semibold uppercase">Your Name</h2>
           <p>Your Address</p>
         </section>
         {/* End of Details */}
 
         {/* Client details */}
-        <section className="mb-5">
-          <h2 className="text-xl font-semibold">Client's Name</h2>
+        <section className="mt-5">
+          <h2 className="text-4xl uppercase">Client's Name</h2>
           <p>Client's Address</p>
         </section>
         {/* End of Client details */}
 
         {/* Dates */}
-        <article className="mb-5">
+        <article className="my-5 flex items-end justify-end">
           <ul className="space-y-2">
-            <li>Invoice Number:</li>
-            <li>Invoiced Date:</li>
-            <li>Due Date:</li>
+            <li>
+              <span className="font-bold">
+              Invoice Number:
+              </span>
+              </li>
+            <li>
+              <span className="font-bold">
+              Invoiced Date:
+              </span>
+              </li>
           </ul>
         </article>
         {/* End of Dates */}
 
         {/* Table */}
-        {/* Add table structure here if needed */}
-        {/* End of Table */}
+<div className="my-5">
+  this is the table
+</div>
+{/* End of Table */}
 
         {/* Notes */}
         <section className="mb-5">
@@ -60,11 +69,23 @@ function App() {
         {/* End of Notes */}
 
         {/* Footer */}
-        <footer className="text-center mt-5">
-          <ul className="space-y-2">
-            <li>Your Name</li>
-            <li>Your Email</li>
-            <li>Phone Number</li>
+        <footer className="">
+          <ul className="flex flex-wrap items-center justify-between">
+            <li>
+              <span>
+              Your Name
+              </span>
+              </li>
+            <li>
+              <span>
+              Your Email
+              </span>
+              </li>
+            <li>
+              <span>
+              Phone Number
+              </span>
+              </li>
           </ul>
         </footer>
         {/* End of Footer */}
