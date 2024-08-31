@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header({ comname, handlePrint }) {
+export default function Header({ comname, handlePrint, lgm }) {
 
   return (
     <div>
@@ -14,7 +14,10 @@ export default function Header({ comname, handlePrint }) {
         `}
       </style>
       <header className="py-6 px-8">
-        <h1 className="text-sm font-bold text-left mb-6 text-black">{comname}</h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-sm font-bold text-left text-black capitalize">{comname}</h1>
+          <img src={lgm} alt={comname} className="rounded-full h-12 w-12 object-cover" />
+        </div>
         <ul className="flex justify-center space-x-4 no-print">
           <li>
             <button
