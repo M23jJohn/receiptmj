@@ -68,27 +68,6 @@ export default function App() {
           <section className="mb-8">
             <p className="text-gray-600">Notes to the Client...</p>
           </section>
-
-          {/* Footer */}
-          <footer className="border-t pt-4">
-            <ul className="flex flex-wrap items-center justify-between text-sm text-gray-600">
-              <li>
-                <span>
-                Your Name
-                </span>
-              </li>
-              <li>
-                <span>
-                Your Email
-                </span>
-              </li>
-              <li>
-                <span>
-                Phone Number
-                </span>
-              </li>
-            </ul>
-          </footer>
         </div>
       </main>
     </div>
