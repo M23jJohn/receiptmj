@@ -7,7 +7,7 @@ const handlePrint = () => {
   return (
     <div>
       <header className="py-6 px-8">
-        <h1 className="text-4xl font-bold text-left mb-6 text-white">{comname}r</h1>
+        <h1 className="text-sm font-bold text-left mb-6 text-white">{comname}</h1>
         <ul className="flex justify-center space-x-4">
           <li>
             <button
