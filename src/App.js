@@ -21,7 +21,7 @@ export default function App() {
   const [indate, setIndate] = useState("");
   const [notes, setNotes] = useState("");
   const [items, setItems] = useState([]);
-  const [newItem, setNewItem] = useState({ description: '', quantity: '', price: '', discount: '' });
+  const [newItem, setNewItem] = useState({ item: '', quantity: '', price: '', discount: '' });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,11 +32,11 @@ export default function App() {
   };
 
   const addItem = () => {
-    if (newItem.description && newItem.quantity && !isNaN(newItem.price) && !isNaN(newItem.discount)) {
+    if (newItem.item && newItem.quantity && !isNaN(newItem.price) && !isNaN(newItem.discount)) {
       const quantity = parseInt(newItem.quantity);
       const total = (quantity * newItem.price) * (1 - newItem.discount / 100);
       setItems([...items, { ...newItem, quantity, total }]);
-      setNewItem({ description: '', quantity: '', price: '', discount: '' });
+      setNewItem({ item: '', quantity: '', price: '', discount: '' });
     }
   };
 
@@ -172,9 +172,9 @@ export default function App() {
               <div className="grid grid-cols-5 gap-2 mb-2">
                 <input 
                   type="text" 
-                  name="description"
-                  placeholder="Description" 
-                  value={newItem.description}
+                  name="item"
+                  placeholder="item" 
+                  value={newItem.item}
                   onChange={handleInputChange}
                   className="p-2 border rounded"
                 />
