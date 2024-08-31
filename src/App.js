@@ -21,7 +21,7 @@ export default function App() {
   const [indate, setIndate] = useState("");
   const [notes, setNotes] = useState("");
   const [items, setItems] = useState([]);
-  const [newItem, setNewItem] = useState({ description: '', quantity: '', price: 0, discount: 0 });
+  const [newItem, setNewItem] = useState({ description: '', quantity: '', price: '', discount: '' });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +36,7 @@ export default function App() {
       const quantity = parseInt(newItem.quantity);
       const total = (quantity * newItem.price) * (1 - newItem.discount / 100);
       setItems([...items, { ...newItem, quantity, total }]);
-      setNewItem({ description: '', quantity: '', price: 0, discount: 0 });
+      setNewItem({ description: '', quantity: '', price: '', discount: '' });
     }
   };
 
