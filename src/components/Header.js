@@ -3,7 +3,7 @@ import React from 'react';
 export default function Header({ handlePrint }) { // Fixed the prop name here
   return (
     <div>
-      <header className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-6 px-8">
+      <header className="text-white py-6 px-8">
         <h1 className="text-4xl font-bold text-center mb-6">Invoice Maker</h1>
         <ul className="flex justify-center space-x-4">
           <li>
