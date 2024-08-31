@@ -32,24 +32,36 @@ export default function App() {
   };
 
   const addItem = () => {
-    // Validate inputs before adding
     if (newItem.description && newItem.quantity && !isNaN(newItem.price) && !isNaN(newItem.discount)) {
       const quantity = parseInt(newItem.quantity);
       const total = (quantity * newItem.price) * (1 - newItem.discount / 100);
       setItems([...items, { ...newItem, quantity, total }]);
-      setNewItem({ description: '', quantity: '', price: 0, discount: 0 });
+      setNewItem({ description: '', quantity: '', price: '', discount: '' });
     }
   };
 
   const deleteItem = (index) => {
     setItems(items.filter((_, i) => i !== index));
   };
+
   const handlePrint = () => {
     window.print();
   };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setLgm(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
-    <div  className="min-h-screen bg-gray-100 py-8">
-            <style>
+    <div className="min-h-screen bg-gray-100 py-8">
+      <style>
         {`
           @media print {
             .no-print {
@@ -65,7 +77,7 @@ export default function App() {
             <Details name={name} address={address} />
             <Client cname={cname} caddress={caddress} />
             <Date indate={indate} innum={innum} />
-            <Table items={items} deleteItem={deleteItem} />
+            <Table items={items} deleteItem={deleteItem} currency="₱" />
             <Notes notes={notes} />
             <Footer name={name} address={address} email={email} phone={phone} />
             <button 
@@ -102,8 +114,7 @@ export default function App() {
               <input 
                 type="file" 
                 accept="image/*"
-                value={lgm} 
-                onChange={(e) => setLgm(e.target.value)} 
+                onChange={handleFileChange} 
                 className="p-2 border rounded"
               />
               <input 
@@ -143,7 +154,7 @@ export default function App() {
               />
               <input 
                 type="text" 
-                placeholder="Company/Bussiness Name" 
+                placeholder="Company/Business Name" 
                 value={comname} 
                 onChange={(e) => setComname(e.target.value)} 
                 className="p-2 border rounded"
@@ -178,7 +189,7 @@ export default function App() {
                 <input 
                   type="number" 
                   name="price"
-                  placeholder="Price" 
+                  placeholder="Price (₱)" 
                   value={newItem.price}
                   onChange={handleInputChange}
                   className="p-2 border rounded"
@@ -201,7 +212,7 @@ export default function App() {
             </div>
             <div className="mb-6">
               <h2 className="text-xl font-semibold mb-2">Preview Items</h2>
-              <Table items={items} deleteItem={deleteItem} />
+              <Table items={items} deleteItem={deleteItem} currency="₱" />
             </div>
             <button 
               onClick={() => setShowInvoice(true)} 
