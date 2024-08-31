@@ -1,35 +1,42 @@
-import React, { useState } from 'react'
-import Notes from './components/Notes.js'
-import Table from './components/Table.js'
-import Date from './components/Dates.js'
-import Client from './components/ClientDetails.js'
-import Details from './components/MainDetails.js'
-import Footer from './components/Footer.js'
-import Header from './components/Header.js'
+import React, { useState } from 'react';
+import Notes from './components/Notes.js';
+import Table from './components/Table.js';
+import Date from './components/Dates.js';
+import Client from './components/ClientDetails.js';
+import Details from './components/MainDetails.js';
+import Footer from './components/Footer.js';
+import Header from './components/Header.js';
 
 export default function App() {
-  const [showInvoice, setShowInvoice] = useState(false)
-  const [name, setName] = useState("")
-  const [address, setAddress] = useState("")
-  const [cname, setCname] = useState("")
-  const [caddress, setCaddress] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [innum, setInnum] = useState("")
-  const [indate, setIndate] = useState("")
-  const [notes, setNotes] = useState("")
-  const [items, setItems] = useState([])
-  const [newItem, setNewItem] = useState({ description: '', quantity: 1, price: 0, discount: 0 })
+  const [showInvoice, setShowInvoice] = useState(false);
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [cname, setCname] = useState("");
+  const [caddress, setCaddress] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [innum, setInnum] = useState("");
+  const [indate, setIndate] = useState("");
+  const [notes, setNotes] = useState("");
+  const [items, setItems] = useState([]);
+  const [newItem, setNewItem] = useState({ description: '', quantity: '', price: 0, discount: 0 });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setNewItem(prev => ({ ...prev, [name]: name === 'quantity' ? parseInt(value) : parseFloat(value) }));
+    setNewItem(prev => ({ 
+      ...prev, 
+      [name]: name === 'quantity' ? value : name === 'price' || name === 'discount' ? parseFloat(value) : value 
+    }));
   };
 
   const addItem = () => {
-    const total = (newItem.quantity * newItem.price) * (1 - newItem.discount / 100);
-    setItems([...items, { ...newItem, total }]);
-    setNewItem({ description: '', quantity: 1, price: 0, discount: 0 });
+    // Validate inputs before adding
+    if (newItem.description && newItem.quantity && !isNaN(newItem.price) && !isNaN(newItem.discount)) {
+      const quantity = parseInt(newItem.quantity);
+      const total = (quantity * newItem.price) * (1 - newItem.discount / 100);
+      setItems([...items, { ...newItem, quantity, total }]);
+      setNewItem({ description: '', quantity: '', price: 0, discount: 0 });
+    }
   };
 
   const deleteItem = (index) => {
@@ -125,7 +132,7 @@ export default function App() {
               onChange={(e) => setNotes(e.target.value)} 
               className="w-full p-2 border rounded mb-6"
               rows="3"
-            ></textarea>
+            />
             <div className="mb-6">
               <h2 className="text-xl font-semibold mb-2">Invoice Items</h2>
               <div className="grid grid-cols-5 gap-2 mb-2">
@@ -138,7 +145,7 @@ export default function App() {
                   className="p-2 border rounded"
                 />
                 <input 
-                  type="number" 
+                  type="text" 
                   name="quantity"
                   placeholder="Quantity" 
                   value={newItem.quantity}
