@@ -61,7 +61,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8">
-      <style>
+ {/*  <style>
         {`
           @media print {
             .no-print {
@@ -69,7 +69,7 @@ export default function App() {
             }
           }
         `}
-      </style>
+      </style> */}
       <main className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         {showInvoice ? (
           <div className="p-8">
