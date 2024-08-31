@@ -61,7 +61,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8">
- {/*  <style>
+      <style>
         {`
           @media print {
             .no-print {
@@ -69,7 +69,7 @@ export default function App() {
             }
           }
         `}
-      </style> */}
+      </style>
       <main className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         {showInvoice ? (
           <div className="p-8">
@@ -82,13 +82,13 @@ export default function App() {
             <Footer name={name} address={address} email={email} phone={phone} />
             <button 
               onClick={() => setShowInvoice(false)} 
-              className="mt-5 bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
+              className="no-print mt-5 bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
             >
               Edit Information
             </button>
           </div>
         ) : (
-          <div className="no-print flex flex-col justify-center p-8">
+          <div className="flex flex-col justify-center p-8">
             <div className="grid grid-cols-2 gap-4 mb-6">
               <input 
                 type="text" 
