@@ -28,6 +28,14 @@ export default function App() {
           <button onClick={() => setShowInvoice(false)} className="mt-5 bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300">Edit Information</button>
         </div> : (
         <>
+          {/* Details:
+          Name
+          Address
+          Cname
+          Caddress
+          Invoice Number
+          Invoiced Date
+          Notes*/}
           <div className="flex flex-col justify-center">
           <input type="text" name="text" id="text" placeholder="Enter Your Name" autoComplete="off" />
           <button onClick={() => setShowInvoice(true)} className="bg-blue-500 py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 font-bold transition-all duration-300">Preview Invoice</button>
