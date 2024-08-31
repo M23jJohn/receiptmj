@@ -15,8 +15,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 py-8">
       <main className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-<Header />
         <div className="p-8">
+       <Header />
           <Details />
           <Client />
           <Date />
