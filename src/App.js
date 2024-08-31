@@ -4,25 +4,25 @@ function App() {
   }
   return (
     <>
-      <main>
+      <main className="p-5 lg:max-w-xl lg:mx-auto">
         {/* Header */}
-        <header>
+        <header className="flex flex-col items-center justify-center mb-5">
           <div>
             <h2>Invoice Maker</h2>
           </div>
           
           <div>
-            <ul>
-              <li><button onClick={handlePrint}>Print</button></li>
-              <li>Download</li>
-              <li>Send</li>
+            <ul className="flex items-center justify-between flex-wrap">
+              <li><button onClick={handlePrint} className="btn-print">Print</button></li>
+              <li><button className="btn-download">Download</button></li>
+              <li><button className="btn-send">Send</button></li>
             </ul>
           </div>
         </header>
         {/* End of Header */}
         
         {/* Details */}
-        <section>
+        <section className="flex items-center justify-end flex-col items-end">
            <h2>Name</h2>
            <p>Your Address</p>
         </section>
