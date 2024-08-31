@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header() {
+export default function Header({handelPrint}) {
   return (
     <div>
               <header className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-6 px-8">
