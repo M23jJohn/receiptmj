@@ -48,7 +48,7 @@ export default function App() {
     window.print();
   };
   return (
-    <div  className="no-print min-h-screen bg-gray-100 py-8">
+    <div  className="min-h-screen bg-gray-100 py-8">
             <style>
         {`
           @media print {
@@ -76,7 +76,7 @@ export default function App() {
             </button>
           </div>
         ) : (
-          <div className="flex flex-col justify-center p-8">
+          <div className="no-print flex flex-col justify-center p-8">
             <div className="grid grid-cols-2 gap-4 mb-6">
               <input 
                 type="text" 
