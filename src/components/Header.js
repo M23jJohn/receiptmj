@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function Header({ handlePrint }) { // Fixed the prop name here
+export default function Header() { // Fixed the prop name here
   return (
+const handlePrint = () => {
+    window.print();
+  };
     <div>
       <header className="text-white py-6 px-8">
         <h1 className="text-4xl font-bold text-center mb-6">Invoice Maker</h1>
