@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function Header() { // Fixed the prop name here
+export default function Header({ comname }) { // Fixed the prop name here
 const handlePrint = () => {
     window.print();
   };
   return (
     <div>
-      <header className="text-white py-6 px-8">
-        <h1 className="text-4xl font-bold text-center mb-6">Invoice Maker</h1>
+      <header className="py-6 px-8">
+        <h1 className="text-4xl font-bold text-left mb-6 text-white">{comname}r</h1>
         <ul className="flex justify-center space-x-4">
           <li>
             <button
