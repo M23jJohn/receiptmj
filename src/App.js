@@ -173,7 +173,7 @@ export default function App() {
                 <input 
                   type="text" 
                   name="item"
-                  placeholder="item" 
+                  placeholder="Item" 
                   value={newItem.item}
                   onChange={handleInputChange}
                   className="p-2 border rounded"
