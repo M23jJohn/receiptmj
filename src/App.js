@@ -16,6 +16,7 @@ export default function App() {
   const [email, setEmail] = useState("");
   const [comname, setComname] = useState("");
   const [phone, setPhone] = useState("");
+  const [lgm, setLgm] = useState("");
   const [innum, setInnum] = useState("");
   const [indate, setIndate] = useState("");
   const [notes, setNotes] = useState("");
@@ -47,11 +48,20 @@ export default function App() {
     window.print();
   };
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
+    <div  className="no-print min-h-screen bg-gray-100 py-8">
+            <style>
+        {`
+          @media print {
+            .no-print {
+              display: none !important;
+            }
+          }
+        `}
+      </style>
       <main className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         {showInvoice ? (
           <div className="p-8">
-            <Header comname={comname} handlePrint={handlePrint} />
+            <Header comname={comname} handlePrint={handlePrint} lgm={lgm} />
             <Details name={name} address={address} />
             <Client cname={cname} caddress={caddress} />
             <Date indate={indate} innum={innum} />
@@ -87,6 +97,13 @@ export default function App() {
                 placeholder="Client's Name" 
                 value={cname} 
                 onChange={(e) => setCname(e.target.value)} 
+                className="p-2 border rounded"
+              />
+              <input 
+                type="file" 
+                accept="image/*"
+                value={lgm} 
+                onChange={(e) => setLgm(e.target.value)} 
                 className="p-2 border rounded"
               />
               <input 
