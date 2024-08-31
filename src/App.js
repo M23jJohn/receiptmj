@@ -43,12 +43,15 @@ export default function App() {
   const deleteItem = (index) => {
     setItems(items.filter((_, i) => i !== index));
   };
+  const handlePrint = () => {
+    window.print();
+  };
   return (
     <div className="min-h-screen bg-gray-100 py-8">
       <main className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         {showInvoice ? (
           <div className="p-8">
-            <Header comname={comname} />
+            <Header comname={comname} handlePrint={handlePrint} />
             <Details name={name} address={address} />
             <Client cname={cname} caddress={caddress} />
             <Date indate={indate} innum={innum} />
