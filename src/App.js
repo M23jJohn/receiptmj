@@ -14,6 +14,7 @@ export default function App() {
   const [cname, setCname] = useState("");
   const [caddress, setCaddress] = useState("");
   const [email, setEmail] = useState("");
+  const [comname, setComname] = useState("");
   const [phone, setPhone] = useState("");
   const [innum, setInnum] = useState("");
   const [indate, setIndate] = useState("");
@@ -118,6 +119,13 @@ export default function App() {
                 placeholder="Invoice Date" 
                 value={indate} 
                 onChange={(e) => setIndate(e.target.value)} 
+                className="p-2 border rounded"
+              />
+              <input 
+                type="text" 
+                placeholder="Company/Bussiness Name" 
+                value={comname} 
+                onChange={(e) => setComname(e.target.value)} 
                 className="p-2 border rounded"
               />
             </div>
