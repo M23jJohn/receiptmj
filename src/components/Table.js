@@ -15,7 +15,7 @@ export default function Table({ items }) {
       <tbody>
         {items.map((item, index) => (
           <tr key={index}>
-            <td className="border p-2">{item.description}</td>
+            <td className="border p-2">{item.item}</td>
             <td className="border p-2 text-right">{item.quantity}</td>
             <td className="border p-2 text-right">₱{item.price.toFixed(2)}</td>
             <td className="border p-2 text-right">{item.discount}%</td>
